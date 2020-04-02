@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - '.github/workflows/r2s_mininal.yml'
+      - 'config_rk3328'
   schedule:
     - cron: '09 08 * * *'
 
