@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - '.github/workflows/main.yml'
+      - 'patches/**'
       - 'config_rk3328'
   schedule:
     - cron: '09 08 * * *'
