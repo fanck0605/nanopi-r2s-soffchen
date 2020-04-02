@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - '.github/workflows/r2s_mininal.yml'
+      - '.github/workflows/main.yml'
       - 'config_rk3328'
   schedule:
     - cron: '09 08 * * *'
@@ -39,7 +39,7 @@ jobs:
           sudo cp repo/repo /usr/bin/
           rm -rf repo
 
-      - name: Init Source
+      - name: Initialization Source
         run: |
           rm -rf friendlywrt-rk3328
           mkdir friendlywrt-rk3328
@@ -47,12 +47,12 @@ jobs:
           repo init -u https://github.com/fanck0605/friendlywrt_manifests -b master-v19.07.1 -m rk3328.xml --repo-url=https://github.com/friendlyarm/repo --no-clone-bundle
           repo sync -c --no-clone-bundle -j8
 
-      - name: Mod Kernel
+      - name: Patch Kernel
         run: |
           cd friendlywrt-rk3328/kernel/
-          git apply ../../add_fullconenat.diff
+          git apply ../../patches/001-add-full_cone_nat.patch
 
-      - name: Custom Configure Files
+      - name: Customize Configuration Files
         run: |
           cp config_rk3328 friendlywrt-rk3328/configs/config_rk3328
 
@@ -68,7 +68,7 @@ jobs:
           gzip friendlywrt-rk3328/out/*.img
           cp friendlywrt-rk3328/out/*.img* ./artifact/
 
-      - name: Save configs
+      - name: Save Configurations
         run: |
           cd friendlywrt-rk3328/friendlywrt
           ./scripts/diffconfig.sh > ../../artifact/config-lite
@@ -77,5 +77,5 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@master
         with:
-          name: R2S-Minimal
+          name: FriendlyWrt
           path: ./artifact/
