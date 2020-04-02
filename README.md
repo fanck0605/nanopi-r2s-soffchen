@@ -8,13 +8,13 @@
 ## 特色
 * 使用 [coolsnowwolf/lede](https://github.com/coolsnowwolf/lede) 并 merge 了 [friendlyarm/friendlywrt](https://github.com/friendlyarm/friendlywrt)
     - 包含所有 coolsnowwolf/lede 的特性
-    - 可以支持 friendlywrt 所支持的机型
+    - 可以支持 friendlyarm/friendlywrt 所支持的机型
 * 集成最新实时监控 Netdata v1.20.0
 * 支持 IPv6
 
 ## 用法
 1. Fork 到自己的账号下
-2. 进入 Action 界面，启用 Github Action
+2. 进入 Actions 界面，启用 Github Action
 3. 在 `config_rk3328` 文件中，自定义所需要的软件包，
 比如需要 luci-app-samba， 那么只要在文件中添加一行 CONFIG_PACKAGE_luci-app-samba=y
 
