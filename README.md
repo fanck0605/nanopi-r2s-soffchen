@@ -27,3 +27,4 @@
 * [klever1988/nanopi-openwrt](https://github.com/klever1988/nanopi-openwrt)
 * [yangliu/NanoPi-R2S](https://github.com/yangliu/NanoPi-R2S)
 * [maxming2333/NanoPi-R2S](https://github.com/maxming2333/NanoPi-R2S)
+* [soffchen/NanoPi-R2S](https://github.com/soffchen/NanoPi-R2S)
