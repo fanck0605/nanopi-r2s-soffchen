@@ -10,6 +10,7 @@
     - 包含所有 coolsnowwolf/lede 的特性
     - 可以支持 friendlyarm/friendlywrt 所支持的机型
 * 集成最新实时监控 Netdata v1.20.0
+* 开启了 [full cone nat](https://github.com/Chion82/netfilter-full-cone-nat)
 * 支持 IPv6
 
 ## 用法
